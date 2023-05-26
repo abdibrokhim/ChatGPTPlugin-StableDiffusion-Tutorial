@@ -1,0 +1,49 @@
+openapi: 3.0.1
+info:
+  title: Image Generation Plugin
+  description: A plugin that generates high-quality images using Stable Diffusion.
+  version: "v1"
+servers:
+  - url: http://127.0.0.1:5000
+paths:
+  /generate-image:
+    post:
+      operationId: generateImage
+      summary: Generate an image
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/generateImageRequest"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/generateImageResponse"
+
+components:
+  schemas:
+    generateImageRequest:
+      type: object
+      required:
+        - prompt
+      properties:
+        prompt:
+          type: string
+          description: The prompt for image generation.
+          required: true
+        seed:
+          type: integer
+          description: The seed for deterministic generation.
+    generateImageResponse:
+      type: object
+      properties:
+        images:
+          type: array
+          items:
+            type: string
+          description: The generated image(s) in base64 format.
+
