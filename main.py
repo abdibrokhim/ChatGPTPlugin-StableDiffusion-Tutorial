@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 # Set up the Stable Diffusion API client
 stability_api = client.StabilityInference(
-    key='',  # Replace with your Stability API key
+    key='sk-1ElOzVKLOebgMxdr2Jl8weOwnRdjdGh0MySXGdMvBDdVphll',  # Replace with your Stability API key
     verbose=True,  # Set to True to enable verbose logging
     engine="stable-diffusion-xl-beta-v2-2-2"  # Replace with the engine you want to use
 )
@@ -80,4 +80,5 @@ def openapi_spec():
 if __name__ == '__main__':
     # Set debug=True to enable auto-reloading when you make changes to the code
     app.run(debug=True, host='127.0.0.1', port=5000)
+
 

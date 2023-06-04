@@ -1,0 +1,1 @@
+Check out step-by-step tutorial on [lablab.ai tutorials](https://lablab.ai/t/chatgpt-plugin-tutorial-how-to-create-chatgpt-plugin)
